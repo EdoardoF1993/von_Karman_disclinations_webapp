@@ -1,0 +1,15 @@
+frank_angle: [1.0]
+geometry: {geom_type: circle, geometric_dimension: 2, mesh_size: 0.08, radius: 1.0}
+model: {E: 196700.0, alpha_penalty: 300, model_dimension: 2, model_type: 2D, nu: 0.15,
+  order: 3, sigma_D0: 1.0, thickness: 0.69}
+poisson_ratio_nu: 0.15
+positions_list:
+- [0.018298939296177454, -0.007816205705915178]
+solvers:
+  elasticity:
+    ksp: {ksp_type: preonly, pc_type: lu}
+    prefix: fvk
+    snes: {snes_atol: 1e-6, snes_max_it: 200, snes_monitor: '', snes_rtol: 1e-6, snes_stol: 1e-6,
+      snes_type: newtonls}
+thickness_ratio_t: 0.1
+young_modulus_e: 100000.0
