@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedge Disclination GUI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 <body onload="loadInitialData()">
 
@@ -23,11 +26,20 @@
                 <div id="coords">X: 0.00, Y: 0.00</div>
             </div>
 
-            <iframe id="plot2" class="plot-frame" src="{{ plot1_url }}" frameborder="0"></iframe>
+            <div class="plot-group">
+                <h3 class="plot-title">Airy stress function ν</h3>
+                <iframe id="plot2" class="plot-frame" src="{{ plot1_url }}" frameborder="0"></iframe>
+            </div>
 
-            <iframe id="plot3" class="plot-frame" src="{{ plot2_url }}" frameborder="0"></iframe>
+            <div class="plot-group">
+                <h3 class="plot-title">Out-of-plane displacement w</h3>
+                <iframe id="plot3" class="plot-frame" src="{{ plot2_url }}" frameborder="0"></iframe>
+            </div>
 
-            <iframe id="plot4" class="plot-frame" src="{{ plot3_url }}" frameborder="0"></iframe>
+            <div class="plot-group">
+                <h3 class="plot-title">Radial stress σrr</h3>
+                <iframe id="plot4" class="plot-frame" src="{{ plot3_url }}" frameborder="0"></iframe>
+            </div>
             
         </div>
 

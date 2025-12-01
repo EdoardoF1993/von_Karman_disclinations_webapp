@@ -1,10 +1,11 @@
-frank_angle: [1.0]
+frank_angle: [1.0, -1.0]
 geometry: {geom_type: circle, geometric_dimension: 2, mesh_size: 0.08, radius: 1.0}
 model: {E: 196700.0, alpha_penalty: 300, model_dimension: 2, model_type: 2D, nu: 0.15,
   order: 3, sigma_D0: 1.0, thickness: 0.69}
 poisson_ratio_nu: 0.15
 positions_list:
-- [0.018298939296177454, -0.007816205705915178]
+- [-0.22396915980747767, 0.3229825701032366]
+- [0.34745941162109373, -0.18416028703962053]
 solvers:
   elasticity:
     ksp: {ksp_type: preonly, pc_type: lu}
