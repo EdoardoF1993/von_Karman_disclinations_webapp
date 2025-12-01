@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedge Disclination GUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body onload="loadInitialData()">
+
+    <div class="page-header">
+        <h1>Nonlinear membrane models with crystalline defects</h1>
+        <a href="https://www.sciencedirect.com/science/article/pii/S0307904X25003099" target="_blank" class="article-link">
+            E. Fabbrini, A. A. León Baldelli, P. Cesana. Kinematically incompatible Föppl-von Kármán plates: analysis and numerics. Appl. Math. Model. 2025. doi.org/10.1016/j.apm.2025.116234
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="left-panel">
+            
+            <div id="canvas-holder">
+                <canvas id="simCanvas" width="300" height="300"></canvas>
+                <div id="coords">X: 0.00, Y: 0.00</div>
+            </div>
+
+            <div class="plot-group">
+                <h3 class="plot-title">Airy stress function ν</h3>
+                <iframe id="plot2" class="plot-frame" src="{{ plot1_url }}" frameborder="0"></iframe>
+            </div>
+
+            <div class="plot-group">
+                <h3 class="plot-title">Out-of-plane displacement w</h3>
+                <iframe id="plot3" class="plot-frame" src="{{ plot2_url }}" frameborder="0"></iframe>
+            </div>
+
+            <div class="plot-group">
+                <h3 class="plot-title">Radial stress σrr</h3>
+                <iframe id="plot4" class="plot-frame" src="{{ plot3_url }}" frameborder="0"></iframe>
+            </div>
+            
+        </div>
+
+        <div class="right-panel">
+            <h2>Control Panel</h2>
+            <div class="status-box" id="statusMsg">System Ready.</div>
+            
+            <div class="slider-group">
+                <h3>Material Parameters</h3>
+                
+                <label for="sliderE">Young Modulus E (MPa)</label>
+                <input type="range" id="sliderE" min="500" max="1000000" step="100" value="100000" oninput="updateParam('E')" onchange="saveParams()">
+                <span id="valueE">100000.0</span>
+                <hr style="margin: 5px 0;">
+
+                <label for="sliderNu">Poisson Ratio ν</label>
+                <input type="range" id="sliderNu" min="-1.0" max="0.5" step="0.01" value="0.15" oninput="updateParam('nu')" onchange="saveParams()">
+                <span id="valueNu">0.15</span>
+                <hr style="margin: 5px 0;">
+                
+                <label for="sliderT">Thickness Ratio t/R</label>
+                <input type="range" id="sliderT" min="0.05" max="1.0" step="0.01" value="0.1" oninput="updateParam('t')" onchange="saveParams()">
+                <span id="valueT">0.10</span>
+            </div>
+            
+            <button class="btn-add" id="btnAdd" onclick="toggleAddMode()">+ Add Wedge</button>
+            <button class="btn-reset" onclick="resetData()">Reset Configuration</button>
+            <hr>
+            <button class="btn-compute" onclick="runCompute()">▶ Run Simulation (Demo.py)</button>
+
+            <h3>Simulation Output</h3>
+            <pre id="outputWindow">Waiting for computation...</pre>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
