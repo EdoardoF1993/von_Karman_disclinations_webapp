@@ -64,7 +64,6 @@ import adios4dolfinx as adios
 from models.adimensional import A_NonlinearPlateFVK
 from meshes import mesh_bounding_box
 from meshes.primitives import mesh_circle_gmshapi
-#from disclinations.utils import Logging
 from utils.la import compute_cell_contributions, compute_disclination_loads
 from utils.viz import plot_scalar, plot_profile, plot_mesh
 from utils.sample_function import sample_function, interpolate_sample

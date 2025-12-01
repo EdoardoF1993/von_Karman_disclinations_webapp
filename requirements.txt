@@ -19,7 +19,6 @@ comm==0.2.2
 contourpy==1.2.1
 cycler==0.12.1
 decorator==5.1.1
-disclinations==2024.0.1
 et-xmlfile==1.1.0
 exceptiongroup==1.2.0
 executing==0.8.3
