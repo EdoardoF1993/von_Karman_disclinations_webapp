@@ -4,7 +4,9 @@ import subprocess
 from flask import Flask, render_template, request, jsonify, send_from_directory
 
 # Inizializzazione Flask
-app = Flask(__name__)
+#app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
+
 
 DATA_FILE = 'Data.yml'
 # Definisce la root directory dell'app Flask (la cartella 'src')
@@ -161,5 +163,5 @@ def compute():
 if __name__ == '__main__':
     if not os.path.exists(DATA_FILE):
         write_data({'frank_angle': [], 'positions_list': [], **DEFAULT_PARAMS})
-    
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)

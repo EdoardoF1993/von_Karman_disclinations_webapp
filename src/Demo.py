@@ -68,8 +68,6 @@ from utils.la import compute_cell_contributions, compute_disclination_loads
 from utils.viz import plot_scalar, plot_profile, plot_mesh
 from utils.sample_function import sample_function, interpolate_sample
 from solvers import SNESSolver, SNESProblem
-from visuals import visuals
-visuals.matplotlibdefaults(useTex=False)
 
 logging.basicConfig(level=logging.INFO)
 
