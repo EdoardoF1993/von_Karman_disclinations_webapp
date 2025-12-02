@@ -4,7 +4,9 @@ import subprocess
 from flask import Flask, render_template, request, jsonify, send_from_directory
 
 # Inizializzazione Flask
-app = Flask(__name__)
+#app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
+
 
 DATA_FILE = 'Data.yml'
 # Definisce la root directory dell'app Flask (la cartella 'src')

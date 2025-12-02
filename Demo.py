@@ -64,13 +64,10 @@ import adios4dolfinx as adios
 from models.adimensional import A_NonlinearPlateFVK
 from meshes import mesh_bounding_box
 from meshes.primitives import mesh_circle_gmshapi
-#from disclinations.utils import Logging
 from utils.la import compute_cell_contributions, compute_disclination_loads
 from utils.viz import plot_scalar, plot_profile, plot_mesh
 from utils.sample_function import sample_function, interpolate_sample
 from solvers import SNESSolver, SNESProblem
-from visuals import visuals
-visuals.matplotlibdefaults(useTex=False)
 
 logging.basicConfig(level=logging.INFO)
 
@@ -338,6 +335,8 @@ scalar_bar_args = {
 
 topology, cells, geometry = dolfinx.plot.vtk_mesh(MixedFE_space_v)
 grid = pyvista.UnstructuredGrid(topology, cells, geometry)
+
+
 
 # PLOT FEM AND ANALYTICAL SOLUTIONS
 
