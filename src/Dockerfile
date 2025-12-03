@@ -38,7 +38,13 @@ COPY requirements.txt .
 # ------------------------------------------------------------
 
 # Remove fenics packages from requirements to avoid pip errors
-RUN sed -i '/fenics-/d' requirements.txt
+RUN sed -i '/^fenics-/d' requirements.txt && \
+    sed -i '/^petsc4py/d' requirements.txt && \
+    sed -i '/^slepc4py/d' requirements.txt && \
+    sed -i '/^mpi4py/d' requirements.txt && \
+    sed -i '/^setuptools==/d' requirements.txt && \
+    sed -i '/^ipython==/d' requirements.txt
+
 
 # Install the rest
 RUN pip3 install --no-cache-dir -r requirements.txt

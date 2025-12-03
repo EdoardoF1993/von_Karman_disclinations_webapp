@@ -59,7 +59,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
 import matplotlib.cm as cm
 
-import adios4dolfinx as adios
+#import adios4dolfinx as adios
 
 from models.adimensional import A_NonlinearPlateFVK
 from meshes import mesh_bounding_box
