@@ -2,7 +2,7 @@
 # 1. Start from the official DOLFINx image (includes PETSc, MPI,
 #    Basix, UFL, FFCx, Dolfinx Python packages, and all deps)
 # ------------------------------------------------------------
-FROM dolfinx/dolfinx:stable
+FROM dolfinx/dolfinx:v0.8.0
 
 # ------------------------------------------------------------
 # 2. System dependencies (optional but useful)
